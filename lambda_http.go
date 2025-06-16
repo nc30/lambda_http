@@ -1,4 +1,4 @@
-package main
+package lambdahttp
 
 import (
 	"bytes"
@@ -145,9 +145,4 @@ func LambdaFnc(handler http.Handler) func(ctx context.Context, r *events.APIGate
 
 func IsLambda() bool {
 	return os.Getenv("AWS_LAMBDA_RUNTIME_API") != ""
-}
-
-func main() {
-	a := &events.APIGatewayV2HTTPRequest{}
-	log.Println(&a)
 }
